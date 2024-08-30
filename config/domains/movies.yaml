@@ -1,4 +1,0 @@
-services:
-  App\Shared\Loader\Infrastructure\LoaderRepository:
-    arguments:
-      $source: '%kernel.project_dir%/data/movies.php'

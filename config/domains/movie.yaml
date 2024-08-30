@@ -1,0 +1,16 @@
+parameters:
+  movie_data_file_path: '%kernel.project_dir%/resources/movies/movies.php'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Movie\:
+    resource: '../../src/Movie/*'
+    exclude:
+      - '../../src/Auth/Infrastructure/{Persistence,ApiPlatform,DependencyInjection}/*'
+
+  App\Movie\Infrastructure\Repository\InMemoryMovieRepository:
+    arguments:
+      $filePath: '%movie_data_file_path%'

@@ -7,19 +7,26 @@
         "php": ">=8.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "api-platform/core": "^3.3",
+        "symfony/asset": "7.0.*",
         "symfony/console": "7.0.*",
         "symfony/dotenv": "7.0.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.0.*",
+        "symfony/messenger": "7.0.*",
         "symfony/property-access": "7.0.*",
         "symfony/runtime": "7.0.*",
         "symfony/serializer": "7.0.*",
+        "symfony/twig-bundle": "7.0.*",
         "symfony/yaml": "7.0.*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.54",
+        "kubawerlos/php-cs-fixer-custom-fixers": "*",
         "phpspec/prophecy-phpunit": "^2.2",
-        "rector/rector": "^1.0"
+        "rector/rector": "^1.0",
+        "symfony/browser-kit": "7.0.*",
+        "symfony/http-client": "7.0.*"
     },
     "config": {
         "allow-plugins": {

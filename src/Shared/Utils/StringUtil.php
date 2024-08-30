@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Shared\Utils;
 
 class StringUtil
@@ -9,5 +11,10 @@ class StringUtil
     public static function countWords(string $string): int
     {
         return count(preg_split('/\s+/u', $string, -1, PREG_SPLIT_NO_EMPTY));
+    }
+
+    public static function countCharacters(string $string): int
+    {
+        return mb_strlen($string);
     }
 }

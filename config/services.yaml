@@ -7,4 +7,5 @@ parameters:
 
 imports:
     - { resource: default_autowire.yaml }
-    - { resource: domains/movies.yaml }
+    - { resource: domains/movie.yaml }
+    - { resource: domains/shared.yaml }

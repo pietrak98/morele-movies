@@ -11,10 +11,10 @@ use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\Set\SymfonySetList;
 
 return RectorConfig::configure()
-    ->withSymfonyContainerXml(__DIR__.'/var/cache/dev/App_KernelDevDebugContainer.xml')
-    ->withCache('/tmp/rector', FileCacheStorage::class)
+    ->withSymfonyContainerXml(__DIR__.DIRECTORY_SEPARATOR.'var'.DIRECTORY_SEPARATOR.'cache'.DIRECTORY_SEPARATOR.'dev'.DIRECTORY_SEPARATOR.'App_KernelDevDebugContainer.xml')
+    ->withCache(DIRECTORY_SEPARATOR.'tmp'.DIRECTORY_SEPARATOR.'rector', FileCacheStorage::class)
     ->withPaths([
-        __DIR__.'/src',
+        __DIR__.DIRECTORY_SEPARATOR.'src',
     ])
     ->withImportNames(true, true, false)
     ->withSets(

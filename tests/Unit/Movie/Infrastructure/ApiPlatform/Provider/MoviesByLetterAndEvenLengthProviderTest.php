@@ -10,13 +10,12 @@ use App\Movie\Domain\Query\GetMoviesByLetterAndEvenLengthQuery;
 use App\Movie\Domain\ValueObject\MovieTitle;
 use App\Movie\Infrastructure\ApiPlatform\State\Provider\MoviesByLetterAndEvenLengthProvider;
 use App\Shared\CQRS\Domain\Query\QueryBusInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class MoviesByLetterAndEvenLengthProviderTest extends TestCase
 {
-    /**
-     * @dataProvider provideMoviesStartingWithLetterData
-     */
+    #[DataProvider('provideMoviesStartingWithLetterData')]
     public function testProvideReturnsMoviesStartingWithLetter(array $moviesData, array $expectedTitles): void
     {
         $queryBus = $this->createMock(QueryBusInterface::class);

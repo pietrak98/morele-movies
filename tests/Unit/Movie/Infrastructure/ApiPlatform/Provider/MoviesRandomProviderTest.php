@@ -11,13 +11,12 @@ use App\Movie\Domain\ValueObject\MovieTitle;
 use App\Movie\Infrastructure\ApiPlatform\Resource\MovieResource;
 use App\Movie\Infrastructure\ApiPlatform\State\Provider\MoviesRandomProvider;
 use App\Shared\CQRS\Domain\Query\QueryBusInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class MoviesRandomProviderTest extends TestCase
 {
-    /**
-     * @dataProvider provideRandomMoviesData
-     */
+    #[DataProvider('provideRandomMoviesData')]
     public function testProvideReturnsRandomMovies(array $moviesData, int $expectedCount): void
     {
         $queryBus = $this->createMock(QueryBusInterface::class);

@@ -11,13 +11,12 @@ use App\Movie\Domain\ValueObject\MovieTitle;
 use App\Movie\Infrastructure\ApiPlatform\Resource\MovieResource;
 use App\Movie\Infrastructure\ApiPlatform\State\Provider\MovieItemProvider;
 use App\Shared\CQRS\Domain\Query\QueryBusInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class MovieItemProviderTest extends TestCase
 {
-    /**
-     * @dataProvider provideMovieData
-     */
+    #[DataProvider('provideMovieData')]
     public function testProvideReturnsMovieByTitle(?Movie $movie, ?string $expectedTitle): void
     {
         $queryBus = $this->createMock(QueryBusInterface::class);

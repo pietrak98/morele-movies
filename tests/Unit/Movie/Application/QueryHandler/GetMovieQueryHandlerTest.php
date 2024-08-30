@@ -9,13 +9,12 @@ use App\Movie\Domain\Model\Movie;
 use App\Movie\Domain\Query\GetMovieQuery;
 use App\Movie\Domain\Repository\MovieRepositoryInterface;
 use App\Movie\Domain\ValueObject\MovieTitle;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class GetMovieQueryHandlerTest extends TestCase
 {
-    /**
-     * @dataProvider provideMovieData
-     */
+    #[DataProvider('provideMovieData')]
     public function testHandleReturnsMovieByTitle(?Movie $movie, ?string $expectedTitle): void
     {
         $movieRepository = $this->createMock(MovieRepositoryInterface::class);

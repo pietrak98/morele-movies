@@ -9,13 +9,12 @@ use App\Movie\Domain\Model\Movie;
 use App\Movie\Domain\Query\GetMoviesByLetterAndEvenLengthQuery;
 use App\Movie\Domain\Repository\MovieRepositoryInterface;
 use App\Movie\Domain\ValueObject\MovieTitle;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class GetMoviesByLetterAndEvenLengthQueryHandlerTest extends TestCase
 {
-    /**
-     * @dataProvider provideMoviesData
-     */
+    #[DataProvider('provideMoviesData')]
     public function testHandleFiltersMoviesStartingWithLetter(array $moviesData, string $letter, array $expectedTitles): void
     {
         $movieRepository = $this->createMock(MovieRepositoryInterface::class);

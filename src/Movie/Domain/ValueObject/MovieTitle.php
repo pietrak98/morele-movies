@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Movie\Domain\ValueObject;
 
+use App\Shared\Utils\StringUtil;
 use Webmozart\Assert\Assert;
 
 final readonly class MovieTitle implements \Stringable
@@ -23,14 +24,9 @@ final readonly class MovieTitle implements \Stringable
         return $this->value;
     }
 
-    public function getLength(): int
-    {
-        return strlen($this->value);
-    }
-
     public function wordCount(): int
     {
-        return str_word_count($this->value);
+        return StringUtil::countWords($this->value);
     }
 
     #[\Override]

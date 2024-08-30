@@ -18,6 +18,7 @@ return (new PhpCsFixer\Config())
         '@Symfony' => true,
         'phpdoc_separation' => false,
         'declare_strict_types' => true,
+        'mb_str_functions' => true,
         MultilinePromotedPropertiesFixer::name() => true,
         ConstructorEmptyBracesFixer::name() => true,
         EmptyFunctionBodyFixer::name() => true,
